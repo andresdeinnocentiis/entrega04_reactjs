@@ -1,38 +1,260 @@
-.App {
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  margin:0;
+  padding: 0;
+  box-sizing:border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+.navfull {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+.collapse {
+  display: none;
+}
+
+.hamb-menu {
+  cursor: pointer;
+  display: block;
+}
+
+.close-menu {
+  display:none;
+}
+
+
+
+.navbar-nav {
+  list-style: none;
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+.cart-btn i{
+  cursor: pointer;
+}
+
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.nav-icon {
+  font-size: 18px;
+}
+
+.titulo {
+  margin-top: 35px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.image {
+  width: 182px;
+  height: 182px;
+  margin: 0;
+  padding:0;
+  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cardProduct {
+  margin: 0;
+  padding:0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items:flex-start;
+  width: fit-content;
+  margin: 25px;
+}
+
+.boxProduct {
+  margin: 0;
+  padding:0;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  width: fit-content;
+  border: 1px solid black;
+}
+
+.nameProduct {
+  padding: 10px;
+  display: flex;
+  text-align: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 14px;
+  width: 180px;
 }
 
-.App-link {
-  color: #61dafb;
+.descriptionProduct {
+  display: flex;
+  text-align: center;
+  align-self: center;
+  font-size: 12px;
+  width: fit-content;
+  border-top: 2px solid grey;
+  padding: 10px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.priceProduct {
+  width: fit-content;
+  align-self: center;
+  
+  font-size: 16px;
+  padding: 10px 0;
+  margin-top: 5px;
+  border-top: 2px solid #ff4800;
+  border-bottom: 2px solid #ff4800;
+  justify-self:flex-end;
+  
+}
+
+@media (min-width: 768px) {
+  .collapse {
+    display:flex;
   }
-  to {
-    transform: rotate(360deg);
+
+  .contenedor-Nav {
+    width: 50%;
   }
+
+  .hamb-menu {
+    display: none;
+  }
+
+  .close-menu {
+    display: none;
+  }
+
+  .navfull {
+    display: flex;
+    justify-content: space-between;
+    
+    padding: 30px 30px;
+  }
+  .item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    
+    text-align: center;
+    justify-content: center;
+  }
+
+  .cart-btn {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .navbar-nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .navbar-nav a{
+    text-decoration: none;
+    color: black;
+    z-index: 2;
+    transition: all 0.01s linear;
+  }
+
+  .textItem{
+    position: relative;
+    top:0;
+    left: 0;
+  }
+  
+  .box1 {
+    opacity: 0;
+    height: 30px;
+    position: absolute;
+    top:-5px;
+    left:-14px;
+    z-index: 1;
+    background-color: #ff4800;
+    transition: all 0.1s linear;
+    
+  }
+  .box2 {
+    opacity: 0;
+    height: 30px;
+    position: absolute;
+    top:-5px;
+    left:-14px;
+    z-index: 0;
+    background-color: rgb(35, 35, 37);
+    transition: all 0.1s linear;
+  }
+
+  
+
+  .navbar-nav a:hover{
+    color: aliceblue;
+    top:3px;
+    left:-6px;
+  }
+  .navbar-nav a:hover ~ .box1{
+    display: block;
+    top:-1px;
+    left:-21px;
+    opacity: 1;
+    
+  }
+  .navbar-nav a:hover ~ .box2{
+    display: block;
+    top:-10px;
+    left:-5px;
+    opacity: 1;
+  }
+
+
+  .caja1 {
+    width: 75px;
+  }
+
+  .caja2 {
+    width: 100px;
+  }
+
+  .caja3 {
+    width: 100px;
+  }
+
+  
+
+  .cart-items {
+    display: flex;
+    position:relative;
+    top:-9px;
+    right: 5px;
+    background-color: #ff4800;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 3px;
+    border-radius: 30%;
+    color: white;
+    font-size: 12px;
+  }
+
+  
+
+  
 }
