@@ -13,4 +13,29 @@ Ideas para aplicar proximamente:
 
 Opté por utilizar un filtro de categorías por fuera del Navbar, ya que me pareció que mejoraría la experiencia de usuario, a la vez que quedaría el contenido mejor ordenado.
 
+
+Instalación
+
+​
+1. Forkea o clona el repositorio.
+
+​
+2. Parado en la raíz del proyecto corré el comando:
+
+​
+
+npm install
+
+​ para instalar todas las dependecias del proyecto ​
+3. Digita el comando:
+
+​
+
+npm start
+
+​ para correr el proyecto, que estará disponible en http://localhost:3000 ​ ​
+
+
+
+
 Andres De Innocentiis.
