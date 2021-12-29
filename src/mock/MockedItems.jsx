@@ -76,7 +76,7 @@ const MockedItems = [
     },
     {
         id:"10",
-        title: "Galaxy5",
+        title: "Galaxy 5",
         category:"calzado-deportivo",
         description: "Galaxy 5 Sport 78",
         price: 3500,
@@ -84,7 +84,7 @@ const MockedItems = [
     },
     {
         id:"11",
-        title: "runfalconGris",
+        title: "Run Falcon Gris",
         category:"calzado-deportivo",
         description: "Run Falcon Grey",
         price: 3250,
