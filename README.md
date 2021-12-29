@@ -1,5 +1,7 @@
 Spotba es un e-commerce para la venta de zapatillas Nike, principalmente estilo Jordan. Es el proyecto final para el curso de React por CODER HOUSE, desarrollado por Andres De Innocentiis, en el cual se aplica todo lo visto durante el curso:
-  
+ 
+(GIF DENTRO DE LA CARPETA DEL PROYECTO)
+
 Tecnologías Aplicadas hasta el momento.
 
 - React.js
