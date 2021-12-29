@@ -8,5 +8,8 @@ Tecnologías Aplicadas hasta el momento.
 - HTML & CSS
 - Github
 
+Ideas para aplicar proximamente:
+- Three.js para el ItemDetail, para renderizar en un canvas 3D cada producto.
+
 
 Andres De Innocentiis.
