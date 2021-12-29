@@ -254,7 +254,81 @@
     font-size: 12px;
   }
 
-  
+  .containerSelector {
+    display: flex;
+    padding: 20px 0;
+    
+  }
 
-  
+  .containerSelector > form > select {
+    background: #ff4800;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    font-weight: bold;
+  }
+
+  .inputSelector {
+    background: #ff4800;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    font-weight: bold;
+    margin-left: 15px;
+ }
+
+  .filterTitle {
+    margin: 0 30px ;
+    text-align: center;
+    align-self: center;
+  }
+
+  .categoryTag {
+    background-color: #ff4800;
+    margin: 0 15px;
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  .categoryTag:hover {
+    padding:8px;
+    box-sizing: border-box;
+    background-color: #fff;
+    margin: 0 15px;
+    color: #ff4800;
+    border: 2px solid #ff4800;
+    
+  }
+
+  .activeClass {
+    padding:8px;
+    box-sizing: border-box;
+    background-color: #fff;
+    margin: 0 15px;
+    color: #ff4800;
+    border: 2px solid #ff4800;
+  }
+
+  .loading {
+    margin-top: 2rem;
+  }
+
+  .linkCardProduct {
+    text-decoration: none;
+    color: black;
+    transition: all .5s ease;
+  }
+  .linkCardProduct:visited {
+    text-decoration: none;
+  }
+  .linkCardProduct:hover {
+    text-decoration: none;
+    scale: 110%;
+    transition: all .5s ease;
+  }
+  .linkCardProduct:focus {
+    text-decoration: none;
+  }
+
 }

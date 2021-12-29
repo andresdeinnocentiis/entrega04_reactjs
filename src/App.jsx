@@ -2,12 +2,15 @@
 import './App.css';
 import NavBar from './components/NavBar/index';
 import ItemListContainer from './containers/ItemListContainer'
+import CategorySelector from './containers/CategorySelector'
+import ItemDetailContainer from './containers/ItemDetailContainer'
 import {
   BrowserRouter,
   Switch,
   Route,
   Link
 } from "react-router-dom"
+
 
 function App() {
   return (
@@ -22,8 +25,24 @@ function App() {
           </div>
         </Route>
         <Route path="/products">
-          <div className='container'>
-            <ItemListContainer />
+          <div className="containerAll">
+            <div className="containerSelector">
+              <h3 className="filterTitle">Filter by category:</h3>
+              <CategorySelector />
+            </div> 
+            <div className='container'> 
+              <Switch>
+                <Route exact path="/products">
+                  <ItemListContainer />
+                </Route>
+                <Route exact path="/products/:catId"> 
+                  <ItemListContainer />
+                </Route>
+                <Route exact path="/product/:itemId"> 
+                  <ItemDetailContainer />
+                </Route>
+              </Switch>
+            </div>
           </div>
         </Route>
 
