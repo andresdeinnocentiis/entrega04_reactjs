@@ -2,20 +2,20 @@ import React from 'react'
 import { useEffect, useState } from "react"
 import MockedItems from "../../mock/MockedItems"
 import { useParams } from 'react-router-dom'
-import ItemDetail from "../../components/ItemDetail"
+import { ItemDetail } from "../../components/ItemDetail"
 
 
 
 const ItemDetailContainer = () => {
-    console.log(MockedItems)
+    
     const [product, setProduct] = useState({})
 
-    console.log("PRODUCT", product)
+    
     const [loading, setLoading] = useState(true)
 
     const  { itemId }  = useParams()
 
-    console.log(itemId);
+    
 
     useEffect(() => {
         setLoading(true)
@@ -26,7 +26,7 @@ const ItemDetailContainer = () => {
             
             
             
-            res(myData)}, 1000)
+            res(myData)}, 500)
         })
         itemPromise.then((res) => {
             setProduct(res)
@@ -36,7 +36,7 @@ const ItemDetailContainer = () => {
     }, [itemId]);
 
     return loading ? <h2 className="loading">Cargando producto...</h2> :
-    <ItemDetail {...product} />
+    <ItemDetail product={product} />
        
 }
 

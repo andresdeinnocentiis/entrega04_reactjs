@@ -41,6 +41,12 @@
 .cart-btn i{
   cursor: pointer;
 }
+.cart-btn i:hover{
+  color:rgb(44, 42, 42);
+}
+.cart-btn a:hover{
+  color:rgb(44, 42, 42);
+}
 
 
 .logo {
@@ -174,6 +180,13 @@
     color: black;
     z-index: 2;
     transition: all 0.01s linear;
+  }
+
+  .cart-btn i:hover{
+    color:rgb(44, 42, 42);
+  }
+  .cart-btn a:hover{
+    color:rgb(44, 42, 42)!important;
   }
 
   .textItem{
@@ -358,7 +371,15 @@
     margin-left: 15px;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    
+  }
+  .notImgCol {
     width: 40%;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    justify-content: space-between;
     
   }
 
@@ -377,6 +398,140 @@
 
   .detailDescription {
     margin-top: 15px;
+  }
+
+  .detailBtns {
+    display: flex;
+    font-weight: bold;
+    gap: 25px;
+    align-items: baseline;
+    box-sizing: border-box;
+  }
+
+  .btnCount {
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    background-color:beige;
+    color: #ff4800;
+    
+  }
+
+  .btnCount:hover, .btnCount:focus {
+    cursor: pointer;
+    border: 2px solid #ff4800;
+    
+  }
+
+  .btnCount:focus {
+    background-color:rgb(223, 223, 203);
+  }
+
+  .btnsContainer {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    
+    
+  }
+  .addToCart, .removeItem,.finalizar {
+    border: none;
+    padding: 10px;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+
+  .removeItem {
+    min-width: 10%;
+  }
+
+  .textLine {
+    max-width: 80%;
+    flex-wrap: wrap;
+  }
+
+  .addToCart {
+    background-color: #ff4800;
+    color: #fff;
+  }
+
+  .cartDisplay {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .myCart {
+    align-self: center;
+    margin-top: 2rem;
+    border-bottom: 2px solid #ff4800;
+    padding-bottom: 10px;
+  }
+
+  .cartEmpty {
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .finalizar {
+    background-color: #ff4800;
+    color: #fff;
+    font-size: 20px;
+  }
+
+  .clear {
+    font-size: 20px;
+  }
+
+  .addToCart:hover, .addToCart:focus,.finalizar:hover, .finalizar:focus {
+    background-color:beige;
+    color: #ff4800;
+    cursor: pointer;
+  }
+
+  .proceed {
+    width: 100%;
+  }
+
+  .itemAdded {
+    align-self: center;
+    color:rgb(4, 158, 4)
+  }
+
+  .removeItem:hover, .removeItem:focus {
+    background-color:beige;
+    color: #ff4800;
+    cursor: pointer;
+  }
+
+  .itemLine {
+    display: flex;
+    padding: 20px;
+    margin: 10px;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+  .itemLine:hover {
+    padding: 18px;
+    border: 2px solid #ff4800;
+  }
+
+  .total {
+    text-align: end;
+    padding: 20px 0;
+    margin: 40px ;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    letter-spacing: 1px;
+  }
+
+  .cartBtns {
+    margin-left: 30px;
+    
   }
 
 }

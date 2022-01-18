@@ -28,7 +28,7 @@ const ItemListContainer = () => {
             if(catId === "all") {
                myData = MockedItems
             }
-            res(myData)}, 2000)
+            res(myData)}, 500)
       })
       itemPromise.then((res) => {
          setItems(res)

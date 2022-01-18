@@ -1,5 +1,5 @@
 
-import CartWidget from "../CartWidget/index.js";
+import CartWidget from "../CartWidget";
 import ItemLink from "../ItemLink"
 
 const NavBar = () => {
