@@ -493,6 +493,19 @@
     cursor: pointer;
   }
 
+  .addToCart:disabled {
+    background-color:beige;
+    color: rgb(104, 103, 103);
+    cursor:default;
+  }
+
+  .restar:disabled, .sumar:disabled {
+    background-color:beige;
+    color: rgb(104, 103, 103);
+    cursor:default;
+    border:none;
+  }
+
   .proceed {
     width: 100%;
   }

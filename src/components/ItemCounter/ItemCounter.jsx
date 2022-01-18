@@ -1,13 +1,12 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { CartContext } from "../../context/CartContext"
-import {Link} from  "react-router-dom";
+import React, { useState } from 'react';
 
-const ItemCounter = ({product, onAdd}) => {
-    const {cart, addItem, removeItem, count, setCount} = useContext(CartContext)  
+
+const ItemCounter = ({stock, onAdd}) => {
     
+    const [count, setCount] = useState(0)
 
     const sumar = () => {
-        if(count<product.stock) { //Minimo control de stock - solo hace que no se pueda exceder del stock de cada producto,
+        if(count<stock) { //Minimo control de stock - solo hace que no se pueda exceder del stock de cada producto,
 
             setCount(prevCount => prevCount+1)
             
@@ -22,14 +21,13 @@ const ItemCounter = ({product, onAdd}) => {
     return (
         <>
             <div className='detailBtns'>
-                <button className='btnCount restar' onClick={restar}>-</button>
+                <button className='btnCount restar' disabled={count===0} onClick={restar}>-</button>
                 <p>{count}</p>
-                <button className='btnCount sumar' onClick={sumar}>+</button> {/*//SI NO FUNCIONA PROBAR MANDANDO addItem como un {OBJETO}*/}
+                <button className='btnCount sumar' disabled={count===stock} onClick={sumar}>+</button> 
             </div>
             <div>
                 <div className='btnsContainer'>
-                    <button className='addToCart' onClick={()=> onAdd() }>Add to cart</button> {/*//SI NO FUNCIONA PROBAR MANDANDO addItem como un {OBJETO}*/}
-                    <button className='removeItem' onClick={()=> removeItem(product)}>Remove item</button>
+                    <button className='addToCart' disabled={count===0} onClick={()=> onAdd(count) }>Add to cart</button> 
                 </div> 
             </div>
         </>

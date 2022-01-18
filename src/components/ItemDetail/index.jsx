@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext} from 'react';
 import { CartContext } from '../../context/CartContext';
 import { ItemCounter } from '../ItemCounter/ItemCounter';
 import {Link} from  "react-router-dom";
@@ -6,10 +6,10 @@ import {Link} from  "react-router-dom";
 
 const ItemDetail = ({product}) => {
     
-    const {cart, addItem, removeItem, sumar, restar, count} = useContext(CartContext)  
+    const {addItem} = useContext(CartContext)  
     const [add, setAdd] = useState(false)
 
-    const onAdd = () => {
+    const onAdd = (count) => {
         setAdd(true)
         addItem(product, count)
     }
@@ -26,7 +26,7 @@ const ItemDetail = ({product}) => {
                         <h2 className='detailPrice'>$ {product.price}</h2>       
                     </div>
                     { !add ?
-                    <ItemCounter product={product} onAdd={onAdd}/>   
+                    <ItemCounter stock={product.stock} onAdd={onAdd}/>   
                     : 
                     <>
                         <p className='itemAdded'>The product has been added to cart.</p>
