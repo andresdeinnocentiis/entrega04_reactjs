@@ -1,8 +1,13 @@
-
+import { useContext } from "react"
 import CartWidget from "../CartWidget";
 import ItemLink from "../ItemLink"
+import { CartContext } from "../../context/CartContext"
 
 const NavBar = () => {
+    const {cart} = useContext(CartContext)
+
+    const show = cart.length > 0
+
     return(
         <nav className='navfull'>
             <div className='logo'><p>spotba.</p></div>
@@ -19,7 +24,7 @@ const NavBar = () => {
                         <ItemLink />
 
                         <li className="item cart-li">
-                            <CartWidget />
+                            {show && <CartWidget />}
                         </li>
                     </ul>
                 </div>

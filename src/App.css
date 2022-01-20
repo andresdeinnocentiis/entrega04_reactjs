@@ -226,7 +226,7 @@
   }
   .navbar-nav a:hover ~ .box1{
     display: block;
-    top:-1px;
+    top:-2px;
     left:-21px;
     opacity: 1;
     
@@ -506,6 +506,8 @@
     border:none;
   }
 
+  
+
   .proceed {
     width: 100%;
   }
@@ -545,6 +547,24 @@
   .cartBtns {
     margin-left: 30px;
     
+  }
+
+  .returnLink {
+    align-self: center;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #ff4800;
+  }
+
+  .returnLink:hover, .returnLink:focus {
+    color: rgb(114, 100, 83);
+  }
+
+  .enabDisab:disabled {
+    background-color:beige;
+    color: rgb(104, 103, 103);
+    cursor:default;
+    border:none;
   }
 
 }

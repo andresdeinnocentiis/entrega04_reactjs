@@ -1,10 +1,7 @@
-import { useContext } from "react"
-import { CartContext } from "../../context/CartContext"
 import { CartCount } from "../CartCount"
 import {Link} from  "react-router-dom";
 
-function CartWidget() {
-    const {cart} = useContext(CartContext)
+function CartWidget() {    
     return(
         
         <div className="cart-btn">
