@@ -55,6 +55,11 @@
   font-style: italic;
 }
 
+.logoLink{
+  text-decoration: none;
+  color: black;
+}
+
 .nav-icon {
   font-size: 18px;
 }
@@ -67,7 +72,8 @@
 .container{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
+  padding: 0 10%;
 }
 
 .image {
@@ -75,6 +81,8 @@
   height: 182px;
   margin: 0;
   padding:0;
+  border: 1px solid black;
+  border-bottom: none;
   
 }
 
@@ -269,7 +277,8 @@
 
   .containerSelector {
     display: flex;
-    padding: 20px 0;
+    padding: 20px 10%;
+    margin-bottom: 30px;
     
   }
 
@@ -471,6 +480,18 @@
     padding-bottom: 10px;
   }
 
+  .titleProds{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+  }
+  .myProducts {
+    align-self: center;
+    margin-top: 2rem;
+    border-bottom: 2px solid #ff4800;
+    padding-bottom: 10px;
+  }
+
   .cartEmpty {
     align-self: center;
     display: flex;
@@ -517,6 +538,11 @@
     color:rgb(4, 158, 4)
   }
 
+  .maxStock {
+    align-self: flex-start;
+    color:#ff4800
+  }
+
   .removeItem:hover, .removeItem:focus {
     background-color:beige;
     color: #ff4800;
@@ -546,7 +572,8 @@
 
   .cartBtns {
     margin-left: 30px;
-    
+    margin-bottom: 35px;
+    padding-bottom: 35px;
   }
 
   .returnLink {
@@ -565,6 +592,12 @@
     color: rgb(104, 103, 103);
     cursor:default;
     border:none;
+  }
+
+  .lottie {
+    justify-self: center;
+    align-self: center;
+    margin-top: 5rem;
   }
 
 }

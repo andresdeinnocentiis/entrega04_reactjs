@@ -7,10 +7,7 @@ const CartContext = createContext([])
 const CartContextProvider = ({children}) => {
 
     const [cart, setCart] = useState([])
-
-    
-
-    
+ 
 
     const isInCart = (id) => {
         let inCart = false
@@ -24,7 +21,7 @@ const CartContextProvider = ({children}) => {
     const addItem = (item, quantity) => { //Si no le aclaro la cantidad, pasa uno solo
        
        const updtItem = cart.find(prod => prod.id === item.id)
-        //if(count>0) {
+        
             if(!isInCart(item.id)){
              setCart([...cart, {id: item.id, title: item.title, price: item.price, quantity: quantity}])
             } else {
@@ -37,8 +34,7 @@ const CartContextProvider = ({children}) => {
                  return prod
              }))
             }
-        //}
-        //setCount(0)
+        
         
     }
 
@@ -51,9 +47,6 @@ const CartContextProvider = ({children}) => {
         setCart([])
     }
 
-    
-
-    
 
     return (
         <CartContext.Provider value={{cart, addItem, removeItem, clear}}>

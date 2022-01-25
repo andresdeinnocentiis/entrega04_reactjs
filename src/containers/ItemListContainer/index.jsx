@@ -4,13 +4,15 @@
 // Ese item list va a mappear item y los devuelve como lista
 
 import { useEffect, useState } from "react"
-import MockedItems from "../../mock/MockedItems"
 import ItemList from "../../components/ItemList"
 import { useParams } from 'react-router-dom'
+import { getFirestore } from "../../firebase"
+import Lottie from "react-lottie"
+import spinner from "../../animations/38344-sneaker-outlined(1).json"
+
 
 const ItemListContainer = () => {
    
-   // Acá va la Promise
 
    const [items, setItems] = useState([]) //Ponemos un estado porque simulamos que lo vamos a traer de una API
 
@@ -18,26 +20,39 @@ const ItemListContainer = () => {
 
    const  {catId}  = useParams()
    
+   const defaultOptions = {
+      loop: true,
+      autoplay: true,
+      animationData: spinner,
+      rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice"
+      }
+  };
+
    useEffect(() => {
       setLoading(true)
-      const itemPromise = new Promise((res, rej) => {
-         
-         setTimeout(()=> {
-            let myData = catId ? MockedItems.filter((item) => item.category === catId) : MockedItems;
+      
+      const bd = getFirestore()
+      const productCollection = bd.collection("products")
+      
+      // USO EL setTimeout() SOLAMENTE PARA QUE SE VEA EL SPINNER, PORQUE SINO CARGA DEMASIADO RAPIDO
+      setTimeout(()=> {
+      productCollection.get().then(value => {
+         let datos = value.docs.map(e => {
+            return{...e.data(), id: e.id}
+         })
+         let myData = catId ? datos.filter((item) => item.category === catId) : datos;
             
-            if(catId === "all") {
-               myData = MockedItems
-            }
-            res(myData)}, 500)
-      })
-      itemPromise.then((res) => {
-         setItems(res)
-      })
-      .finally(()=> setLoading(false))
+         if(catId === "all") {
+            myData = datos
+         }
+         setItems(myData)
+         setLoading(false)
+     })},3000)
    }, [catId])
    
    return(
-      loading ? <h2 className="loading">Cargando productos...</h2> :
+      loading ? <div className="lottie"><Lottie options={defaultOptions} width={500} /></div> :
       <ItemList items={items}/>)
 }
 

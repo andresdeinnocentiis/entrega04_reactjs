@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import CategoryList from "../../components/CategoryList"
 import Categorias from "../../mock/Categorias"
-import { useParams } from "react-router-dom"
 
 const CategorySelector = () => {
     // Acá va la Promise

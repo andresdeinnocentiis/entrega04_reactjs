@@ -1,12 +1,31 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
-import { Total } from "../Total/Total";
+import { Total } from "../Total";
 import {Link} from  "react-router-dom";
+import Lottie from "react-lottie"
+import spinner from "../../animations/75869-img176sprinter.json"
 
 const Cart = () => {
     const {cart, removeItem, clear} = useContext(CartContext)
-    
+    const [loading, setLoading] = useState(true)
+
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: spinner,
+        rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice"
+        }
+    };
    
+    setTimeout(()=> { setLoading(false)}, 1000) // Esto es SOLAMENTE para usar el spinner, no tiene otra funcionalidad
+
+    if(loading){
+        return(
+            <div className="lottie">
+                <Lottie options={defaultOptions} width={500} />
+            </div>)
+    } else {
     return(
         <div>
             
@@ -19,7 +38,7 @@ const Cart = () => {
                         
                         return (
                         <div className="itemLine" key={item.id}>
-                            <h1 className="textLine">{`Cod.${item.id} - ${item.title} - $${item.price} - x${item.quantity}`}</h1>
+                            <h1 className="textLine">{`- ${item.title} - $${item.price} - x${item.quantity}`}</h1>
                             <button className='removeItem' onClick={()=>removeItem(item)}>Remove Item</button>
                         </div>
                         )
@@ -40,7 +59,7 @@ const Cart = () => {
                 </div>
             </div>
         </div>
-    )
+    )}
 }
 
 export default Cart 

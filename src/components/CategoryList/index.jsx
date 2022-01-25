@@ -1,5 +1,6 @@
 import Category from '../Category'
 
+
 const CategoryList = ({categories}) => {
     
     return(

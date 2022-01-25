@@ -2,19 +2,19 @@ const Categorias = [
     {
         id: 1,
         type: "all",
-        title: "Todos los productos",
+        title: "Show All",
         address:"/products/all"
     },
     {
         id: 2,
         type: "calzado-urbano",
-        title: "Calzado Urbano",
+        title: "Urban Footwear",
         address:"/products/calzado-urbano"
     },
     {
         id: 3,
         type: "calzado-deportivo",
-        title: "Calzado Deportivo",
+        title: "Sport Footwear",
         address:"/products/calzado-deportivo"
     },
 ]

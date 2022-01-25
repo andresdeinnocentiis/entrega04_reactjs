@@ -1,4 +1,3 @@
-//import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar/index';
 import ItemListContainer from './containers/ItemListContainer';
@@ -8,10 +7,9 @@ import {
   BrowserRouter,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import {CartContextProvider} from "./context/CartContext"
-import Cart from "./components/Cart/Cart"
+import Cart from "./components/Cart"
 
 function App() {
   return (
@@ -27,7 +25,11 @@ function App() {
             </div>
           </Route>
           <Route path="/products">
+          
             <div className="containerAll">
+              <div className='titleProds'>
+                <h1 className="myProducts"> Products</h1>
+              </div>
               <div className="containerSelector">
                 <h3 className="filterTitle">Filter by category:</h3>
                 <CategorySelector />

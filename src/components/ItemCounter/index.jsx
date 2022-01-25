@@ -25,6 +25,9 @@ const ItemCounter = ({stock, onAdd}) => {
                 <p>{count}</p>
                 <button className='btnCount sumar' disabled={count===stock} onClick={sumar}>+</button> 
             </div>
+            {
+                count===stock? <p className='maxStock'>Max stock reached*</p> : <></>
+            }
             <div>
                 <div className='btnsContainer'>
                     <button className='addToCart' disabled={count===0} onClick={()=> onAdd(count) }>Add to cart</button> 
