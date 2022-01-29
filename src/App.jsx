@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import {CartContextProvider} from "./context/CartContext"
 import Cart from "./components/Cart"
+import Form from './components/Form';
 
 function App() {
   return (
@@ -56,6 +57,11 @@ function App() {
           <Route path="/about">
             <div className='about'>
               <h1>ABOUT</h1>
+            </div>
+          </Route>
+          <Route path="/checkout">
+            <div className='checkout'>
+              <Form />
             </div>
           </Route>
           <Route path="/*">

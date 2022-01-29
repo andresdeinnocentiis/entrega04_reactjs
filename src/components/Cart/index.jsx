@@ -20,6 +20,8 @@ const Cart = () => {
    
     setTimeout(()=> { setLoading(false)}, 1000) // Esto es SOLAMENTE para usar el spinner, no tiene otra funcionalidad
 
+    
+
     if(loading){
         return(
             <div className="lottie">
@@ -52,9 +54,9 @@ const Cart = () => {
                 </>
                 }
                 
-                <Total />
+                <Total className="total"/>
                 <div className="btnsContainer cartBtns">
-                    <button className='finalizar enabDisab' disabled={cart.length ===0} onClick={clear}>Proceed To Checkout</button> {/* Por ahora le puse la funcion Clear xqe no tiene hecha logica para facturar */}
+                    <Link className="finalizar enabDisab" disabled={cart.length ===0} to="/checkout">Proceed To Checkout</Link>
                     <button className='removeItem clear enabDisab' disabled={cart.length ===0} onClick={clear}>Clear Cart</button>
                 </div>
             </div>

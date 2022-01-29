@@ -2,16 +2,11 @@ import React from "react";
 import { CartContext } from "../../context/CartContext";
 import { useContext } from "react";
 
-const Total = () => {
-    const {cart} = useContext(CartContext)
-    let total = 0
+const Total = (props) => {
+    const {total} = useContext(CartContext)
     
-    cart.map(item => {
-        total += item.quantity * item.price
-    })
-
     return(
-        <h1 className="total">{`TOTAL: $${total}`}</h1>
+        <h1 className={props.className}>{`TOTAL: $${total}`}</h1>
     )
 }
 
