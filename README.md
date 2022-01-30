@@ -10,7 +10,7 @@ Tecnologías Aplicadas hasta el momento.
 - HTML & CSS
 - Github
 
-Ideas para aplicar proximamente:
+Ideas para aplicar a futuro:
 - Three.js para el ItemDetail, para renderizar en un canvas 3D cada producto.
 
 Opté por utilizar un filtro de categorías por fuera del Navbar, ya que me pareció que mejoraría la experiencia de usuario, a la vez que quedaría el contenido mejor ordenado.
