@@ -32,7 +32,7 @@ const CartContextProvider = ({children}) => {
              
              setCart(cart.map((prod)=> {
                  if(prod.id === item.id){ 
-                     prod.quantity = newQuant
+                    prod.quantity = newQuant
                  }
                  return prod
              }))
@@ -53,7 +53,7 @@ const CartContextProvider = ({children}) => {
     useEffect(() => {
         let tot = 0
         cart.map(item => {   
-            tot += item.quantity * item.price    
+            return(tot += item.quantity * item.price)    
         })
         setTotal(prevTotal => tot)
     }, [cart])

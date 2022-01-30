@@ -41,8 +41,8 @@ const ItemDetailContainer = () => {
             setLoading(false)
     })},1500)
     }, [itemId])
-
-    return loading ? <div className="lottie"><Lottie options={defaultOptions} width={500} /></div> : <ItemDetail product={product} />
+    
+    return loading ? <div className="lottie"><Lottie options={defaultOptions} width={window.innerWidth > 768 ? 500 : 300} /></div> : <ItemDetail product={product} />
        
 }
 

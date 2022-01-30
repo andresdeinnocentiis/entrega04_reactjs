@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Link} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 
 
 const Categorias = [
@@ -23,7 +23,7 @@ const ItemLink = () => {
         {categorias.map((categoria) => {
             return(
                 <li key={categoria.catId} className="item">
-                    <Link className="textItem" to={categoria.ruta}>{categoria.nombre}</Link>
+                    <NavLink exact activeClassName="activeLink" className="textItem" to={categoria.ruta}>{categoria.nombre}</NavLink>
                     <div className={`box1 caja${categoria.catId}`} ></div> {/* Estos extra divs son para darle efectos despues con hover */}
                     <div className={`box2 caja${categoria.catId}`} ></div> {/* Estos extra divs son para darle efectos despues con hover */}
                 </li>

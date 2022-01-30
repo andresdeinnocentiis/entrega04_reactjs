@@ -25,7 +25,7 @@ const Cart = () => {
     if(loading){
         return(
             <div className="lottie">
-                <Lottie options={defaultOptions} width={500} />
+                <Lottie options={defaultOptions} width={window.innerWidth > 768 ? 500 : 300} />
             </div>)
     } else {
     return(
@@ -56,8 +56,8 @@ const Cart = () => {
                 
                 <Total className="total"/>
                 <div className="btnsContainer cartBtns">
-                    <Link className="finalizar enabDisab" disabled={cart.length ===0} to="/checkout">Proceed To Checkout</Link>
-                    <button className='removeItem clear enabDisab' disabled={cart.length ===0} onClick={clear}>Clear Cart</button>
+                    <Link className={`${cart.length === 0?"disabled":"finalizar enabDisab"}`} disabled={cart.length === 0} to={cart.length === 0?"#":"/checkout"}>Proceed To Checkout</Link>
+                    <button className='removeItem clear enabDisab' disabled={cart.length === 0} onClick={clear}>Clear Cart</button>
                 </div>
             </div>
         </div>

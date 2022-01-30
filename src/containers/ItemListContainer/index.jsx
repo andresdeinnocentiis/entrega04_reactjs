@@ -48,11 +48,11 @@ const ItemListContainer = () => {
          }
          setItems(myData)
          setLoading(false)
-     })},3000)
+     })},2000)
    }, [catId])
    
    return(
-      loading ? <div className="lottie"><Lottie options={defaultOptions} width={500} /></div> :
+      loading ? <div className="lottie"><Lottie options={defaultOptions} width={window.innerWidth > 768 ? 500 : 300} /></div> :
       <ItemList items={items}/>)
 }
 

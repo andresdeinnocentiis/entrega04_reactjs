@@ -7,7 +7,7 @@ const CartCount = () => {
     const {cart} = useContext(CartContext)
     let count = 0
     cart.map(item => {
-        count += item.quantity 
+        return(count += item.quantity) 
     })
 
     return(

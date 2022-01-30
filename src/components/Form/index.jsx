@@ -2,12 +2,25 @@ import React, {useState, useContext} from "react";
 import { CartContext } from "../../context/CartContext";
 import { Total } from "../Total";
 import { getFirestore } from "../../firebase";
+import Lottie from "react-lottie"
+import spinner from "../../animations/61255-sneaker-checkout-success.json"
 
 const Form = () => {
 
     const {cart, clear, total} = useContext(CartContext)
     
     const [compraOk, setCompraOk] = useState(false)
+
+    const [loading, setLoading] = useState(true)
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: spinner,
+        rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice"
+        }
+    };
+    setTimeout(()=> { setLoading(false)}, 1000) // Esto es SOLAMENTE para usar el spinner, no tiene otra funcionalidad
 
     const [err, setErr] = useState({
         errName:false,
@@ -29,11 +42,9 @@ const Form = () => {
         setFormData(prevFormData => ({
             ...prevFormData,
             [name]: value
-        }))
-        
+        })) 
     }
-
-    //console.log(formData) - HABILITAR EN CASO DE QUERER CHEQUEAR QUE CADA INPUT SETEA EL FORM EN TIEMPO REAL CON CADA TECLA
+    
     
     const cancel = () => {
         clear()
@@ -44,7 +55,6 @@ const Form = () => {
             email:""
         })
     }
-
     
 
     const handleSubmit = (event) => {
@@ -59,7 +69,7 @@ const Form = () => {
         }
 
 
-        console.log("OBJETO: ", ordenCompra)
+        
         if (formData.name.length < 3) {
             setErr(prevErr => ({...prevErr, errName:true}))
         } else if (formData.lastName.length < 3) {
@@ -69,12 +79,19 @@ const Form = () => {
         } else if(formData.email.length === 0) {
             setErr(prevErr => ({...prevErr, errEmail:true}))
         } else {
-            const OrderCollection = db.collection("orders").add(ordenCompra).then(cancel())
+            db.collection("orders").add(ordenCompra).then(cancel())
+
             setCompraOk(true)
         }
         
     }
 
+    if(loading){
+        return(
+            <div className="lottie">
+                <Lottie options={defaultOptions} width={window.innerWidth > 768 ? 500 : 300} />
+            </div>)
+    } else {
     return (
         <div className="form-container">
             <div className="cartDetail">
@@ -139,7 +156,7 @@ const Form = () => {
                 />
                 </div>
                 
-                {console.log(!formData.email.includes("@"))}
+                
                 {formData.name.length < 3 && err.errName ? <p className="inputError">* Name has to be at least 3 characters long.</p> : <></> }
                 {formData.lastName.length < 3 && err.errLastName ? <p className="inputError">* Last Name has to be at least 3 characters long.</p> : <></> }
                 {formData.phone.length < 8 && err.errPhone ? <p className="inputError">* Phone has to be at least 8 characters long.</p> : <></> }
@@ -157,7 +174,7 @@ const Form = () => {
                 }
             </form>
         </div>
-    )
+    )}
 }
 
 export default Form

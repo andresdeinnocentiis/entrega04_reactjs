@@ -11,6 +11,8 @@ import {
 import {CartContextProvider} from "./context/CartContext"
 import Cart from "./components/Cart"
 import Form from './components/Form';
+import { About } from './components/About';
+import { Home } from './components/Home';
 
 function App() {
   return (
@@ -22,7 +24,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <div className='home'>
-              <h1>HOME</h1>
+              <Home />
             </div>
           </Route>
           <Route path="/products">
@@ -56,7 +58,7 @@ function App() {
           </Route> 
           <Route path="/about">
             <div className='about'>
-              <h1>ABOUT</h1>
+              <About />
             </div>
           </Route>
           <Route path="/checkout">
