@@ -1,8 +1,3 @@
-// Llamada a la API o la promesa
-// Manejo de estados
-// Trae un item list
-// Ese item list va a mappear item y los devuelve como lista
-
 import { useEffect, useState } from "react"
 import ItemList from "../../components/ItemList"
 import { useParams } from 'react-router-dom'
@@ -14,7 +9,7 @@ import spinner from "../../animations/38344-sneaker-outlined(1).json"
 const ItemListContainer = () => {
    
 
-   const [items, setItems] = useState([]) //Ponemos un estado porque simulamos que lo vamos a traer de una API
+   const [items, setItems] = useState([]) 
 
    const [loading, setLoading] = useState(true)
 

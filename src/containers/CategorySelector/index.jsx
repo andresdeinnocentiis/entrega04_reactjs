@@ -3,11 +3,8 @@ import CategoryList from "../../components/CategoryList"
 import Categorias from "../../mock/Categorias"
 
 const CategorySelector = () => {
-    // Acá va la Promise
-
-   const [categories, setCategories] = useState([]) //Ponemos un estado porque simulamos que lo vamos a traer de una API
-   
-   
+    
+   const [categories, setCategories] = useState([]) 
 
    useEffect(() => {
       const categoryPromise = new Promise((res, rej) => {

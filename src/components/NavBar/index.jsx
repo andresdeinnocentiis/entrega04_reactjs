@@ -56,7 +56,7 @@ const NavBar = () => {
         </nav>
     )
 }
-//hoverMenu()
+
 
 
 export default NavBar;
