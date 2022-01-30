@@ -66,7 +66,9 @@ function App() {
               <Form />
             </div>
           </Route>
-          
+          <Route path="/*">
+            <h2>404 - Page Not Found</h2>
+          </Route>
         </Switch>
       </BrowserRouter>
     </CartContextProvider>
